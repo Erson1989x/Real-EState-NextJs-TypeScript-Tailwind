@@ -7,8 +7,8 @@ const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <nav className='fixed top-2 z-50 w-screen px-4'>
-        <div className='container flex items-center justify-between rounded-lg bg-slate-100 h-10 py-3'>
+    <nav className='fixed top-2 z-50 w-screen md:px-4'>
+        <div className='container flex items-center justify-between md:rounded-lg bg-slate-100 h-10 py-3'>
         <div>
             <Link href='/home'>Logo</Link>
         </div>
@@ -23,15 +23,15 @@ const Navbar = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
             </svg>
         </button>
-            {menuOpen && (
-                <div className='md:hidden absolute top-full right-0 gap-4 h-screen w-1/2 bg-slate-100 p-4 flex flex-col items-center justify-center'>
-                    <Link href='/home'>Home</Link>
-                    <Link href='/about'>About</Link>
-                    <Link href='/contact'>Contact</Link>
-                    <Link href='/'>Services</Link>
-                    <Link href='/'>Priceing</Link>
+            {menuOpen ? (
+                <div className='md:hidden absolute top-full right-0 gap-4 h-screen w-1/2 bg-slate-100 bg-opacity-70 p-4 flex flex-col items-center justify-center rounded shadow'>
+                    <Link href='/home' className='text-slate-700 font-bold text-xl'>Home</Link>
+                    <Link href='/about' className='text-late-700 font-bold text-xl'>About</Link>
+                    <Link href='/contact' className='texlate-700 font-bold text-xl'>Contact</Link>
+                    <Link href='/' className='text-slate-700 font-bold text-xl'>Services</Link>
+                    <Link href='/' className='text-slate-700 font-bold text-xl'>Priceing</Link>
                 </div>
-            )}
+            ): null}
         </div>
     </nav>
   )
